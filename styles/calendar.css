@@ -1,0 +1,341 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: content-box;
+}
+
+:root {
+  --main-txt-color: #1c5bff;
+}
+
+select {
+  text-align: center;
+  width: 100%;
+  padding: 10px 10px 10px 0;
+  border: 0;
+  color: #fff;
+  font-size: 21px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  background: url('https://www.materialui.co/materialIcons/hardware/keyboard_arrow_down_white_192x192.png')
+    right center no-repeat;
+  background-size: 20px;
+}
+
+.monthNameSelect {
+  min-width: 100px;
+  padding: 0 20px;
+}
+
+.monthNameSelect:hover {
+  background: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+}
+
+.contentWrapper {
+  padding: 0px;
+  background: white;
+  margin: 60px;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+
+.next,
+.prev,
+.calendarViewSelect,
+.searchCalendar,
+.settings {
+  font-size: 16px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next:hover,
+.prev:hover,
+.calendarViewSelect:hover,
+.searchCalendar:hover,
+.settings:hover {
+  background: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.prev {
+  margin-right: 10px;
+}
+
+.next {
+  margin-left: 10px;
+}
+
+.monthIcons {
+  font-size: 6px;
+}
+
+.monthLabel {
+  margin: 0 auto;
+  display: flex;
+  width: 20vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight {
+  background-color: #7b00ff;
+  color: #fff;
+}
+
+#alter {
+  border-bottom: 0px solid #eee;
+  padding: 10px;
+  color: white;
+  background-color: var(--main-txt-color);
+}
+
+.week {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
+  padding: 0px 1px 1px 1px;
+  color: #fff;
+  background: var(--main-txt-color);
+}
+
+.weekLabel {
+  padding: 2px 20px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  border: 0px solid #eee;
+  background: #4378ff;
+}
+
+#calendar {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
+  background: #ddd;
+  padding: 0px 1px 1px 1px;
+}
+
+.date {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.month {
+  font-size: 36px;
+}
+
+.date [type='submit'] {
+  margin: 0 0 0 90px;
+}
+
+.date:hover {
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.date:active {
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.num {
+  display: flex;
+  color: #000;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  justify-content: flex-end;
+}
+
+.items {
+  width: 8px;
+  height: 8px;
+  border-radius: 16px;
+  background: tomato;
+  margin: 0 auto;
+}
+
+.memo {
+  font-family: sans-serif;
+  margin: 40px 5px 20px 5px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/*  Modal */
+
+#modal {
+  position: absolute;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  top: 100px;
+  left: 100px;
+  width: 500px;
+  height: auto;
+  background-color: #dadada;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  padding: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+#modal h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+#modal textarea {
+  width: 460px;
+  height: 28px;
+  resize: none;
+  font-size: 16px;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+#modal #cancel {
+  float: right;
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #666;
+  border-radius: 5px;
+  margin-top: -10px;
+  cursor: pointer;
+}
+
+#modal #cancel:hover,
+#modal button:hover {
+  background: var(--main-txt-color);
+}
+
+#modal li {
+  width: 460px;
+  height: 25px;
+  padding: 3px;
+  box-sizing: border-box;
+  background-color: #6e6e6e;
+  color: #fff;
+  margin: 3px 0;
+}
+
+#modal li p {
+  float: left;
+}
+
+#modal .delete {
+  float: right;
+  margin-top: -2px;
+}
+
+#modal [type='text'] {
+  width: 430px;
+  height: 28px;
+  font-size: 16px;
+  padding: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+#modal button {
+  float: right;
+  width: 445px;
+  height: 40px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #666;
+  border-radius: 5px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+#modal .todo_input {
+  vertical-align: middle;
+}
+
+#modal .add {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    margin: 0;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: content-box;
+  }
+
+  .contentWrapper {
+    margin: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #ddd;
+    background: #7b00ff;
+  }
+
+  .weekLabel {
+    padding: 2px 20px 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    border: 0px solid #eee;
+    background: #4378ff;
+  }
+
+  #calendar {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(auto-fill, minmax(13vw, 1fr));
+    background: #ddd;
+    padding: 0px 1px 1px 1px;
+  }
+
+  .week {
+    padding: 0px;
+    grid-template-columns: repeat(auto-fill, minmax(13vw, 1fr));
+    background: var(--main-txt-color);
+  }
+}
+@media screen and (max-height: 540px) {
+  .date {
+    min-height: 12vh;
+    max-height: 12vh;
+    padding: 7px;
+    font-size: 8px;
+  }
+}
